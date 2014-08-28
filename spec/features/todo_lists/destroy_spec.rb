@@ -1,7 +1,12 @@
 require 'rails_helper'
 
 describe "Deleting todo lists" do
- 	let!(:todo_list) { TodoList.create(title: "Groceries", description: "Grocery list.") }
+	let!(:user) { todo_list.user }
+ 	let!(:todo_list) { create(:todo_list) }
+
+ 	before do 
+ 		sign_in user, password: "jacksonvoice1"
+ 	end
 
  	it "is successful when clicking destroy link" do
  	visit "/todo_lists"

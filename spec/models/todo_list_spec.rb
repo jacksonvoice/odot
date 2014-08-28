@@ -1,7 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe TodoList, :type => :model do
-  it { should have_many(:todo_items) }
+  context "relationships" do 
+    it { should have_many(:todo_items) }
+    it { should belong_to(:user) }
+  end
 
   describe "#has_complete_items?" do
   	let(:todo_list) { TodoList.create(title: "Grocery list", description: "Groceries")}

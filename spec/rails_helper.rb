@@ -44,4 +44,6 @@ RSpec.configure do |config|
   config.include Capybara::DSL
   config.include TodoListHelpers, type: :feature
   config.include RailsDomIdHelper, type: :feature
+  config.include AuthenticationHelpers::Controller, type: :controller
+  config.include AuthenticationHelpers::Feature, type: :feature
 end
