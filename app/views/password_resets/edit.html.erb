@@ -1,0 +1,13 @@
+<h1>Chenage your password</h1>
+<%= form_for @user, url: password_reset_path(@user.password_reset_token), html: { method: :path } do |form| %>
+
+	<%= form.label :password %>
+	<%= form.password_field :password %>
+	 <br />
+	 <%= form.label :psssword_confirmation, "Password again" %>
+	 <%= form.password_field :password_confirmation %>
+	 <br/>
+
+	 <%= submit_tag "Change Password" %>
+
+ <% end %>
